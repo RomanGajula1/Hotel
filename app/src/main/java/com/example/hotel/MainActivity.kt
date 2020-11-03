@@ -12,8 +12,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
-    lateinit var listItemHotel: List<ModelHotel>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
@@ -27,37 +25,15 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val listHotel: ArrayList<ModelHotel> = ArrayList()
-        listHotel.add(ModelHotel("Hotel_1", "https://www.freestockimages.ru/architecture?pgid=ivwn77kz-fcef5588-5394-4fde-96a4-377d7584ebba"))
-//        listHotel.add(ModelHotel("Hotel_2", R.drawable.ford_mustang_bullitt_2019_2))
-//        listHotel.add(ModelHotel("Hotel_3", R.drawable.ford_mustang_bullitt_2019_2))
-//        listHotel.add(ModelHotel("Hotel_4", R.drawable.ford_mustang_bullitt_2019_2))
-//        listHotel.add(ModelHotel("Hotel_5", R.drawable.ford_mustang_bullitt_2019_2))
-        val adapter = Adapter(listHotel)
-        recyclerView.adapter = adapter
+//        val listHotel: ArrayList<ModelHotel> = ArrayList()
+//        listHotel.add(ModelHotel("Hotel_1", "https://www.gstatic.com/webp/gallery/4.sm.jpg"))
+//        listHotel.add(ModelHotel("Hotel_2", "https://www.gstatic.com/webp/gallery/4.sm.jpg"))
+//        listHotel.add(ModelHotel("Hotel_3", "https://www.gstatic.com/webp/gallery/4.sm.jpg"))
+//        listHotel.add(ModelHotel("Hotel_4", "https://www.gstatic.com/webp/gallery/4.sm.jpg"))
+//        listHotel.add(ModelHotel("Hotel_5", "https://www.gstatic.com/webp/gallery/4.sm.jpg"))
+        var viewModel = ViewModel()
+        recyclerView.adapter = viewModel.adapter
 
-
-
-
-
-
-
-
-
-
-
-//        val tags: ArrayList<String> = ArrayList()
-////        tags.add("Hotel_1")
-////        tags.add("Hotel_2")
-//        val adapter = Adapter(tags)
-//        binding.recyclerView.adapter = adapter
-//        val hotelsList = listOf(
-//            ModelHotel("hotel1"),
-//            ModelHotel("hotel2"),
-//            ModelHotel("hotel3"),
-//            ModelHotel("hotel4"),
-//            ModelHotel("hotel5")
-//        )
 
     }
 }

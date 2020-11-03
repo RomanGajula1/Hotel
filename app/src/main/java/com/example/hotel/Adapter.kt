@@ -1,7 +1,5 @@
 package com.example.hotel
 
-import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +12,9 @@ import com.squareup.picasso.Picasso
 
 
 class Adapter(private var hotelsList: ArrayList<ModelHotel>) : RecyclerView.Adapter<Adapter.MyViewHolder>(){
-//
-//    lateinit var context: Context
-//
-//    var binding : ActivityMainBinding = DataBindingUtil.setContentView(context as Activity, R.layout.activity_main)
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) { // MyViewHolder хранит тэги корнегого представления каждого элемента списка.
-        val taskHotel: TextView = view.findViewById<View>(R.id.nameHotel) as TextView
+        val nameHotel: TextView = view.findViewById<View>(R.id.nameHotel) as TextView
         val imageView: ImageView = view.findViewById<View>(R.id.imageView) as ImageView
     }
     
@@ -32,7 +26,7 @@ class Adapter(private var hotelsList: ArrayList<ModelHotel>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) { // выполняет привязку объекта
         val itemText: ModelHotel = hotelsList[position]
-        holder.taskHotel.text = itemText.name
+        holder.nameHotel.text = itemText.name
 
         Picasso.get()
             .load(hotelsList[position].image)
