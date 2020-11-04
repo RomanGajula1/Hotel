@@ -11,7 +11,7 @@ import com.example.hotel.databinding.ActivityMainBinding
 import com.squareup.picasso.Picasso
 
 
-class Adapter(private var hotelsList: ArrayList<ModelHotel>) : RecyclerView.Adapter<Adapter.MyViewHolder>(){
+class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Adapter.MyViewHolder>(){
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) { // MyViewHolder хранит тэги корнегого представления каждого элемента списка.
         val nameHotel: TextView = view.findViewById<View>(R.id.nameHotel) as TextView
@@ -25,17 +25,17 @@ class Adapter(private var hotelsList: ArrayList<ModelHotel>) : RecyclerView.Adap
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) { // выполняет привязку объекта
-        val itemText: ModelHotel = hotelsList[position]
+        val itemText: ModelHotel = hotelsList!!.get(position)
         holder.nameHotel.text = itemText.name
 
         Picasso.get()
-            .load(hotelsList[position].image)
+            .load(hotelsList!![position].image)
             .error(R.drawable.rotate)
             .into(holder.imageView)
     }
 
     override fun getItemCount(): Int {
-        return hotelsList.size
+        return hotelsList?.size ?: 0
     }
 
 }
