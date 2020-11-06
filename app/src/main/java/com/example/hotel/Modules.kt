@@ -6,4 +6,6 @@ import org.koin.dsl.module
 val appModule = module {
     viewModel { MyViewModel() }
     single { Repository() }
+    single { MainActivity() }
+    single { HotelInfo() }
 }
