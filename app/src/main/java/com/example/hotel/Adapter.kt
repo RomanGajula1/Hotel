@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide.init
+import com.example.hotel.databinding.ActivityHotelInfoBinding
 import com.squareup.picasso.Picasso
 
 
@@ -30,13 +32,13 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
         }
     }
     
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder { // Создает экземпляр файла макета элемента и владельца представления. OnBindViewHolder – загружает данные в указанной позиции в представления, ссылки на которые хранятся в заданном заполнителе представления.
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder { // Создает экземпляр файла макета элемента и владельца представления.
         val itemsView: View = LayoutInflater.from(parent.context) // LayoutInflater – это класс, который умеет из содержимого layout-файла создать View-элемент. Метод который это делает называется inflate.
         .inflate(R.layout.taskhotel, parent, false)
         return MyViewHolder(itemsView)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) { // выполняет привязку объекта
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) { // выполняет привязку объекта, OnBindViewHolder – загружает данные в указанной позиции в представления, ссылки на которые хранятся в заданном заполнителе представления
         val itemText: ModelHotel = hotelsList!![position]
         holder.nameHotel.text = itemText.name
 
