@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso
 
 
 class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Adapter.MyViewHolder>(){
+    val context: Context = MainActivity()
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) { // MyViewHolder хранит тэги корнегого представления каждого элемента списка.
         val nameHotel: TextView = view.findViewById<View>(R.id.nameHotel) as TextView
@@ -25,8 +26,7 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
         init {
             view.setOnClickListener{
                 val intent = Intent(view.context, HotelInfo::class.java)
-                intent.putExtra("nameHotel", nameHotel.text.toString())
-                intent.putExtra("description", description.descriptions)
+                intent.putExtra("id", ModelHotel().id)
                 view.context.startActivity(intent)
             }
         }
@@ -46,6 +46,12 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
             .load(hotelsList!![position].image)
             .error(R.drawable.rotate)
             .into(holder.imageView)
+
+//        holder.nameHotel.setOnClickListener{
+//            val intent = Intent(context.applicationContext, HotelInfo::class.java)
+////            intent.putExtra("id", holder.nameHotel.text)
+//            context.startActivity(intent)
+//        }
     }
 
     override fun getItemCount(): Int {

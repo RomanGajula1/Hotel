@@ -7,7 +7,7 @@
 
         <variable
             name="ViewModel"
-            type="com.example.hotel.MyViewModel" />
+            type="com.example.hotel.HotelInfoViewModel" />
         <variable
             name="MainActivity"
             type="com.example.hotel.HotelInfo" />
@@ -29,7 +29,7 @@
         android:layout_marginStart="52dp"
         android:layout_marginBottom="12dp"
         android:fontFamily="sans-serif"
-        android:text="@{ViewModel.comment}"
+        android:text="@{ViewModel.comments}"
         android:textSize="16sp" />
 
     <EditText
@@ -42,7 +42,7 @@
         android:layout_marginBottom="88dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@={ViewModel.comment}" />
+        android:text="@={ViewModel.comments}" />
 
     <TextView
         android:id="@+id/textView7"
