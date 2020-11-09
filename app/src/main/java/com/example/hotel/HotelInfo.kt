@@ -1,6 +1,7 @@
 package com.example.hotel
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.hotel.databinding.ActivityHotelInfoBinding
+import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -28,6 +30,10 @@ class HotelInfo : AppCompatActivity() {
         val description = intent.getIntExtra("id", 0)
         binding.NameHotel.text = myViewModel.adapter.hotelsList?.get(description)?.name
         binding.descriptionText.setText(myViewModel.adapter.hotelsList?.get(description)?.descriptions!!)
+        Picasso.get()
+            .load(myViewModel.adapter.hotelsList?.get(description)?.image)
+            .error(R.drawable.rotate)
+            .into(binding.ImageHotel)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
     }
