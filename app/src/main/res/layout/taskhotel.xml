@@ -12,9 +12,6 @@
         <variable
             name="adapter"
             type="com.example.hotel.Adapter" />
-        <variable
-            name="MyViewModel"
-            type="com.example.hotel.MyViewModel" />
         
     </data>
 

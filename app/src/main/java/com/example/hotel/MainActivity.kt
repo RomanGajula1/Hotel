@@ -14,14 +14,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        val myViewModel : MyViewModel by viewModel()
+        val hotelsListViewModel : HotelsListViewModel by viewModel()
 
         super.onCreate(savedInstanceState)
         var binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        
+
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = myViewModel.adapter
+        recyclerView.adapter = hotelsListViewModel.adapter
 
     }
 }

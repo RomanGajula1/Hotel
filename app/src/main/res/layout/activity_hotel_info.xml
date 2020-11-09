@@ -68,15 +68,15 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="212dp"
         android:gravity="top|center_horizontal"
-        android:text="TextView"
+        android:text="@{ViewModel.descriptionText}"
         android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/ImageHotel"
-        android:layout_width="340dp"
-        android:layout_height="269dp"
+        android:layout_width="440dp"
+        android:layout_height="469dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="57dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="110dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="404dp"
@@ -96,7 +96,7 @@
         android:layout_marginBottom="28dp"
         android:fontFamily="cursive"
         android:gravity="top|center_horizontal"
-        android:text="TextView"
+        android:text="@{ViewModel.nameMusic}"
         android:textSize="38sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

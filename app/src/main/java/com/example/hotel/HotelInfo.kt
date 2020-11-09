@@ -16,25 +16,19 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 @Suppress("DEPRECATION")
 class HotelInfo : AppCompatActivity() {
 
-    private val viewModel by lazy { ViewModelProviders.of(this).get(HotelInfoViewModel::class.java) }
-    val myViewModel : MyViewModel by viewModel()
+    val hotelInfoViewModel : HotelInfoViewModel by viewModel()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val myViewModel : MyViewModel by viewModel()
 
         val binding : ActivityHotelInfoBinding = DataBindingUtil.setContentView(this, R.layout.activity_hotel_info)
 
-        val intent = intent
-        val description = intent.getIntExtra("id", 0)
-        binding.NameHotel.text = myViewModel.adapter.hotelsList?.get(description)?.name
-        binding.descriptionText.setText(myViewModel.adapter.hotelsList?.get(description)?.descriptions!!)
-        Picasso.get()
-            .load(myViewModel.adapter.hotelsList?.get(description)?.image)
-            .error(R.drawable.rotate)
-            .into(binding.ImageHotel)
+        var id = intent.getIntExtra("id", 0)
+
+        hotelInfoViewModel.loadDetailsHotel(id)
+
         binding.lifecycleOwner = this
-        binding.viewModel = viewModel
+        binding.viewModel = hotelInfoViewModel
     }
 }
