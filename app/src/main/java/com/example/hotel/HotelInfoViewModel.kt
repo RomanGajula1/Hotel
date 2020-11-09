@@ -1,6 +1,8 @@
 package com.example.hotel
 
 import android.content.Intent
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.squareup.picasso.Picasso
@@ -14,10 +16,12 @@ class HotelInfoViewModel : ViewModel(), KoinComponent {
     var comments = MutableLiveData("")
     var nameMusic = MutableLiveData("")
     var descriptionText = MutableLiveData("")
-    var photo = MutableLiveData("")
-
+    lateinit var photo : ImageView
     fun loadDetailsHotel(id: Int){
         nameMusic.value = repository.getListHotel()[id].name
         descriptionText.value = repository.getListHotel()[id].descriptions.toString()
+        Picasso.get()
+            .load(repository.getListHotel()[id].image)
+            .into(photo)
     }
 }
