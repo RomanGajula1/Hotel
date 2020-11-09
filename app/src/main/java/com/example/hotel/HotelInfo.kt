@@ -20,11 +20,14 @@ class HotelInfo : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val myViewModel : MyViewModel by viewModel()
 
         val binding : ActivityHotelInfoBinding = DataBindingUtil.setContentView(this, R.layout.activity_hotel_info)
 
         val intent = intent
-        val description = intent.getStringExtra("id")
+        val description = intent.getIntExtra("id", 0)
+        binding.NameHotel.text = myViewModel.adapter.hotelsList?.get(description)?.name
+        binding.descriptionText.setText(myViewModel.adapter.hotelsList?.get(description)?.descriptions!!)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
     }

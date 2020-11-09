@@ -59,22 +59,22 @@
     <TextView
         android:id="@+id/descriptionText"
         android:layout_width="wrap_content"
-        android:layout_height="166dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="229dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="212dp"
         android:gravity="top|center_horizontal"
         android:text="TextView"
         android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/ImageHotel"
-        android:layout_width="318dp"
-        android:layout_height="196dp"
+        android:layout_width="340dp"
+        android:layout_height="269dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="57dp"
         android:layout_marginTop="110dp"

@@ -25,8 +25,9 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
 
         init {
             view.setOnClickListener{
+                val hotel = hotelsList?.get(bindingAdapterPosition) as ModelHotel
                 val intent = Intent(view.context, HotelInfo::class.java)
-                intent.putExtra("id", ModelHotel().id)
+                intent.putExtra("id", hotel.id)
                 view.context.startActivity(intent)
             }
         }
