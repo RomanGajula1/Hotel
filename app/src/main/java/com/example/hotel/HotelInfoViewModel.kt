@@ -2,6 +2,7 @@ package com.example.hotel
 
 import android.content.Intent
 import android.widget.ImageView
+import androidx.core.text.parseAsHtml
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

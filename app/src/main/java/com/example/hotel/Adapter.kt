@@ -21,7 +21,6 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) { // MyViewHolder хранит тэги корнегого представления каждого элемента списка.
         val nameHotel: TextView = view.findViewById<View>(R.id.nameHotel) as TextView
         val imageView: ImageView = view.findViewById<View>(R.id.imageView) as ImageView
-        val description: ModelHotel = ModelHotel()
 
         init {
             view.setOnClickListener{
