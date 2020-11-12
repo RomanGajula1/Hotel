@@ -85,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@tools:sample/avatars"
-        app:imageUrl="@{ViewModel.photo}"
+        app:image="@{ViewModel.photo}"
         />
 
     <TextView
@@ -98,7 +98,7 @@
         android:layout_marginBottom="28dp"
         android:fontFamily="cursive"
         android:gravity="top|center_horizontal"
-        android:text="@{ViewModel.nameMusic}"
+        android:text="@{ViewModel.nameHotel}"
         android:textSize="38sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
