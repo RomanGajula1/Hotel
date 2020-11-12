@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide.init
@@ -17,6 +18,14 @@ import com.squareup.picasso.Picasso
 
 class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Adapter.MyViewHolder>(){
     val context: Context = MainActivity()
+
+    companion object {
+        @JvmStatic
+        @BindingAdapter("app:image")
+        fun loadImage(view: ImageView, url: String) {
+            Picasso.get().load(url).into(view)
+        }
+    }
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) { // MyViewHolder хранит тэги корнегого представления каждого элемента списка.
         val nameHotel: TextView = view.findViewById<View>(R.id.nameHotel) as TextView

@@ -22,11 +22,6 @@ class HotelInfoViewModel : ViewModel(), KoinComponent {
     fun loadDetailsHotel(id: Int){
         nameHotel = repository.getListHotel()[id].name.toString()
         descriptionText = repository.getListHotel()[id].descriptions.toString()
-
-        photo = "https://www.gstatic.com/webp/gallery/4.sm.jpg"
-        @BindingAdapter("app:image")
-        fun loadImage(view: ImageView, url: String){
-            Picasso.get().load(url).into(view)
-        }
+        photo = repository.getListHotel()[id].image.toString()
     }
 }
