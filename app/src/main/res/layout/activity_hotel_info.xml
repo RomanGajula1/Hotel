@@ -7,7 +7,7 @@
 
         <variable
             name="ViewModel"
-            type="com.example.hotel.HotelInfoViewModel" />
+            type="com.example.hotel.MVVM.HotelInfoViewModel" />
         <variable
             name="MainActivity"
             type="com.example.hotel.HotelInfo" />

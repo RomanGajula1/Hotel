@@ -2,16 +2,15 @@ package com.example.hotel
 
 import android.content.Context
 import android.content.Intent
-import android.view.Display
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide.init
+import com.example.hotel.MVVM.ModelHotel
+import com.example.hotel.Room.DAO.HotelDAO
 import com.example.hotel.databinding.ActivityHotelInfoBinding
 import com.squareup.picasso.Picasso
 
@@ -30,10 +29,12 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) { // MyViewHolder хранит тэги корнегого представления каждого элемента списка.
         val nameHotel: TextView = view.findViewById<View>(R.id.nameHotel) as TextView
         val imageView: ImageView = view.findViewById<View>(R.id.imageView) as ImageView
+        val buttonDelete: ImageView = view.findViewById<View>(R.id.button_delete) as ImageView
+
+        val hotel = hotelsList?.get(bindingAdapterPosition) as ModelHotel
 
         init {
             view.setOnClickListener{
-                val hotel = hotelsList?.get(bindingAdapterPosition) as ModelHotel
                 val intent = Intent(view.context, HotelInfo::class.java)
                 intent.putExtra("id", hotel.id)
                 view.context.startActivity(intent)

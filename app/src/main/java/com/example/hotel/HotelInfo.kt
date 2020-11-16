@@ -1,15 +1,12 @@
 package com.example.hotel
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+import com.example.hotel.MVVM.HotelInfoViewModel
 import com.example.hotel.databinding.ActivityHotelInfoBinding
-import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

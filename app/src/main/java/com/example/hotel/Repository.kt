@@ -1,6 +1,14 @@
 package com.example.hotel
 
-class Repository() {
+import android.app.Application
+import androidx.lifecycle.LiveData
+import androidx.room.Database
+import com.example.hotel.MVVM.ModelHotel
+import com.example.hotel.Room.DAO.HotelDAO
+import com.example.hotel.Room.DAO.IDAO
+import com.example.hotel.Room.DataBase
+
+class Repository(val hotelDao: HotelDAO) {
 
     fun getListHotel(): ArrayList<ModelHotel> {
         val listHotel: ArrayList<ModelHotel> = ArrayList()

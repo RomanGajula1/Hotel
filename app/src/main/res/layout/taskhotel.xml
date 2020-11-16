@@ -8,7 +8,7 @@
 
         <variable
             name="modelHotel"
-            type="com.example.hotel.ModelHotel" />
+            type="com.example.hotel.MVVM.ModelHotel" />
         <variable
             name="adapter"
             type="com.example.hotel.Adapter" />
@@ -39,6 +39,15 @@
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
 
     </LinearLayout>
 </layout>
