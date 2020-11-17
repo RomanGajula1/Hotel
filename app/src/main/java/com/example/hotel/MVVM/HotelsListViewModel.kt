@@ -20,11 +20,10 @@ class HotelsListViewModel(application: Application) : AndroidViewModel(applicati
     var readAllData: LiveData<ArrayList<ModelHotel>>? = null
     val adapter: Adapter = Adapter(null)
     init {
-        val db: DataBase = Room.databaseBuilder(application, DataBase::class.java, "database").allowMainThreadQueries().build()
-        var list: ArrayList<ModelHotel> = db.getMyDao()!!.allList()
-        adapter.hotelsList = list
+//        val db: DataBase = Room.databaseBuilder(application, DataBase::class.java, "database").allowMainThreadQueries().build()
+//        var list: ArrayList<ModelHotel> = db.getMyDao()!!.allList()
+        adapter.hotelsList = repository.getListHotel()
         adapter.notifyDataSetChanged()
-
     }
 
 //    fun addHotel(modelHotel: ModelHotel){

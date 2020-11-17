@@ -20,7 +20,6 @@ class Repository(val hotelDao: HotelDAO) {
         listHotel.add(ModelHotel(5, "LidoLux", "https://pix-feed.com/wp-content/uploads/2018/03/3.jpg", "Located in Belti, hotel Lidolux offers free Wi-Fi, a restaurant, a fitness centre and a bar."))
         listHotel.add(ModelHotel(6, "Gurman", "https://avatars.mds.yandex.net/get-zen_doc/16074/pub_5b976ee5afa75b00a9930277_5b976fe904327700ab9a8f68/scale_1200", "Featuring free wifi, country house Gurman is located in Balti. Each room has a fully equipped private bathroom with a Hairdryer and a bidet."))
         listHotel.add(ModelHotel(7, "Paulina", "https://pic.voombu.ru/img/hotel/max1280x900/183/183111728.jpg", "The hotel Paulina is located in the town of Falesti. Free Wi-Fi is available. Each room here will provide you with air conditioning and a balcony. An electric kettle is also provided."))
-        return listHotel
+        return hotelDao.allList()
     }
-
 }

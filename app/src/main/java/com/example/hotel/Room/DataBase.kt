@@ -25,20 +25,26 @@ abstract class DataBase : RoomDatabase() {
 
         fun getDataBase(context: Context) : DataBase {
 
-            val Instance = INSTANCE
-            if (Instance != null){
-                return Instance
-            }
-            synchronized(this){
-                val instance = Room.databaseBuilder(
+//            val Instance = INSTANCE
+//            if (Instance != null){
+//                return Instance
+//            }
+//            synchronized(this){
+//                val instance = Room.databaseBuilder(
+//                    context.applicationContext,
+//                    DataBase::class.java,
+//                    "database").build()
+//                INSTANCE = instance
+//                return instance
+//            }
+            if (INSTANCE == null) {
+                INSTANCE = Room.databaseBuilder(
                     context.applicationContext,
                     DataBase::class.java,
-                    "database").build()
-                INSTANCE = instance
-                return instance
+                    "database"
+                ).build()
             }
-
-
+            return INSTANCE!!
         }
     }
 }
