@@ -11,6 +11,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotel.MVVM.ModelHotel
 import com.example.hotel.Room.DAO.HotelDAO
+import com.example.hotel.Room.DataBase
 import com.example.hotel.databinding.ActivityHotelInfoBinding
 import com.squareup.picasso.Picasso
 
@@ -51,6 +52,7 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) { // выполняет привязку объекта, OnBindViewHolder – загружает данные в указанной позиции в представления, ссылки на которые хранятся в заданном заполнителе представления
         val itemText: ModelHotel = hotelsList!![position]
         holder.nameHotel.text = itemText.name
+        val database: DataBase = DataBase.getDataBase(context)
 
         Picasso.get()
             .load(hotelsList!![position].image)

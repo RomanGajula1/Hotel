@@ -12,11 +12,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
+    val instance: MainActivity? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         val hotelsListViewModel : HotelsListViewModel by viewModel()
-
         super.onCreate(savedInstanceState)
         var binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 

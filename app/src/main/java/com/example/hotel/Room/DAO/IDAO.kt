@@ -8,7 +8,7 @@ import com.example.hotel.Repository
 @Dao
 interface IDAO {
     @Query("SELECT * FROM model")
-    fun allList() : ArrayList<ModelHotel>
+    fun allList() : LiveData<ArrayList<ModelHotel>>
     @Insert
     fun create(modelHotel: ModelHotel)
     @Update

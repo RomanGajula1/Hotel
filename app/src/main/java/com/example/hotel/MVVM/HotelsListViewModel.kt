@@ -24,11 +24,11 @@ class HotelsListViewModel(application: Application) : AndroidViewModel(applicati
 //        var list: ArrayList<ModelHotel> = db.getMyDao()!!.allList()
         adapter.hotelsList = repository.getListHotel()
         adapter.notifyDataSetChanged()
+        val hotelDao = DataBase.getDataBase(application).getMyDao()
     }
 
-//    fun addHotel(modelHotel: ModelHotel){
-//        viewModelScope.launch(Dispatchers.IO){
-//            repository.addHotel(modelHotel)
-//        }
-//    }
+    fun getListHotel(){
+        val hotelDao = DataBase.getDataBase(getApplication()).getMyDao()
+        val list = hotelDao?.allList()
+    }
 }
