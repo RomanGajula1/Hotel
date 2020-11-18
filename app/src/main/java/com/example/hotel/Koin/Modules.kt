@@ -17,5 +17,4 @@ val appModule = module {
     single { HotelInfo() }
     single { DataBase::class.java }
     single { HotelDAO() }
-    viewModel { HotelsListViewModel() }
 }

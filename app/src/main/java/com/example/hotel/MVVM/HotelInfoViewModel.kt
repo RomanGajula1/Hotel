@@ -13,8 +13,8 @@ class HotelInfoViewModel : ViewModel(), KoinComponent {
     var descriptionText = String()
     var photo = String()
     fun loadDetailsHotel(id: Int){
-        nameHotel = repository.getListHotel()[id].name.toString()
-        descriptionText = repository.getListHotel()[id].descriptions.toString()
-        photo = repository.getListHotel()[id].image.toString()
+//        nameHotel = repository.getListHotel()[id].name.toString()
+//        descriptionText = repository.getListHotel()[id].descriptions.toString()
+//        photo = repository.getListHotel()[id].image.toString()
     }
 }
