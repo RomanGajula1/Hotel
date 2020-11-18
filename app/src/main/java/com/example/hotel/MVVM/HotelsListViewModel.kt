@@ -21,7 +21,6 @@ class HotelsListViewModel(application: Application) : AndroidViewModel(applicati
     var adapter: Adapter = Adapter(null)
     init {
         readAllData = repository.getAllHotel()
-        adapter = repository.getAllHotel()
     }
 
     fun getListHotel() : LiveData<List<ModelHotel>>? {

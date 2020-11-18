@@ -26,21 +26,21 @@ class Repository() {
         return listHotel!!
     }
 
-    fun insert(modelHotel: ModelHotel){
-        InsertHotel(hotelDao!!).execute(modelHotel)
-    }
+//    fun insert(modelHotel: ModelHotel){
+//        InsertHotel(hotelDao!!).execute(modelHotel)
+//    }
 
-    class InsertHotel() : AsyncTask<ModelHotel, Void, Void>() {
-        private var hotelDAO: HotelDAO? = null
-        constructor(hotelDAO: HotelDAO) : this(){
-            this.hotelDAO = hotelDAO
-        }
-        override fun doInBackground(vararg hotel: ModelHotel?): Void? {
-            hotelDAO?.create(hotel[0]!!)
-            return null
-        }
-
-    }
+//    class InsertHotel() : AsyncTask<ModelHotel, Void, Void>() {
+//        private var hotelDAO: HotelDAO? = null
+//        constructor(hotelDAO: HotelDAO) : this(){
+//            this.hotelDAO = hotelDAO
+//        }
+//        override fun doInBackground(vararg hotel: ModelHotel?): Void? {
+//            hotelDAO?.create(hotel[0]!!)
+//            return null
+//        }
+//
+//    }
 
 
 
