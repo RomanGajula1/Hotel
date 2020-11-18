@@ -18,17 +18,12 @@ import org.koin.core.inject
 class HotelsListViewModel(application: Application) : AndroidViewModel(application), KoinComponent {
     private val repository: Repository by inject()
     var readAllData: LiveData<ArrayList<ModelHotel>>? = null
-    val adapter: Adapter = Adapter(null)
+    var adapter: Adapter = Adapter(null)
     init {
-//        val db: DataBase = Room.databaseBuilder(application, DataBase::class.java, "database").allowMainThreadQueries().build()
-//        var list: ArrayList<ModelHotel> = db.getMyDao()!!.allList()
-        adapter.hotelsList = repository.getListHotel()
-        adapter.notifyDataSetChanged()
-        val hotelDao = DataBase.getDataBase(application).getMyDao()
+        readAllData = repository.getAllHotel()
     }
 
-    fun getListHotel(){
-        val hotelDao = DataBase.getDataBase(getApplication()).getMyDao()
-        val list = hotelDao?.allList()
+    fun getListHotel() : LiveData<ArrayList<ModelHotel>>? {
+        return readAllData
     }
 }

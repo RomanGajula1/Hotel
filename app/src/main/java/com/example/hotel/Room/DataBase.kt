@@ -55,7 +55,6 @@ abstract class DataBase : RoomDatabase() {
                 hotelDAO?.create(ModelHotel(7, "Paulina", "https://pic.voombu.ru/img/hotel/max1280x900/183/183111728.jpg", "The hotel Paulina is located in the town of Falesti. Free Wi-Fi is available. Each room here will provide you with air conditioning and a balcony. An electric kettle is also provided."))
                 return  null
             }
-
         }
 
     }

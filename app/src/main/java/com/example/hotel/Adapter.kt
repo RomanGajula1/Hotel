@@ -66,6 +66,11 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
 //        }
     }
 
+    fun setHotel(hotel: ArrayList<ModelHotel>){
+        this.hotelsList = hotel
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
         return hotelsList?.size ?: 0
     }
