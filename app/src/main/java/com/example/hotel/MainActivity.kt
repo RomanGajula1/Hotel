@@ -25,11 +25,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = hotelsListViewModel.adapter
 
-        hotelsListViewModel.getListHotel()?.observe(this, Observer<ArrayList<ModelHotel>>(){
-            fun onChanged(@NonNull hotel: ArrayList<ModelHotel>) {
-                hotelsListViewModel.adapter.setHotel(hotel)
-            }
-        })
+
 
     }
 }

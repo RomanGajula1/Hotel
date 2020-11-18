@@ -14,7 +14,7 @@ import com.example.hotel.Room.DataBase
 class Repository() {
 
     private var hotelDao: HotelDAO? = null
-    private lateinit var listHotel: LiveData<ArrayList<ModelHotel>>
+    var listHotel: LiveData<List<ModelHotel>>? = null
 
     constructor(application: Application) : this(){
         val dataBase: DataBase = DataBase.getDataBase(application)
@@ -22,8 +22,8 @@ class Repository() {
         listHotel = hotelDao!!.allList()
     }
 
-    fun getAllHotel() : LiveData<ArrayList<ModelHotel>>{
-        return listHotel
+    fun getAllHotel() : LiveData<List<ModelHotel>>{
+        return listHotel!!
     }
 
     fun insert(modelHotel: ModelHotel){

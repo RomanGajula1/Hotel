@@ -17,13 +17,14 @@ import org.koin.core.inject
 
 class HotelsListViewModel(application: Application) : AndroidViewModel(application), KoinComponent {
     private val repository: Repository by inject()
-    var readAllData: LiveData<ArrayList<ModelHotel>>? = null
+    var readAllData: LiveData<List<ModelHotel>>? = null
     var adapter: Adapter = Adapter(null)
     init {
         readAllData = repository.getAllHotel()
+        adapter = repository.getAllHotel()
     }
 
-    fun getListHotel() : LiveData<ArrayList<ModelHotel>>? {
+    fun getListHotel() : LiveData<List<ModelHotel>>? {
         return readAllData
     }
 }

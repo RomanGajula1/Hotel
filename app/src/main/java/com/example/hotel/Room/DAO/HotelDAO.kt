@@ -1,15 +1,17 @@
 package com.example.hotel.Room.DAO
 
+import androidx.lifecycle.LiveData
 import com.example.hotel.MVVM.ModelHotel
 import com.example.hotel.Repository
 
 class HotelDAO : IDAO {
 
-    override fun allList(repository: Repository): ArrayList<ModelHotel> {
-        return repository.getListHotel()
+    override fun allList(): LiveData<List<ModelHotel>> {
+        val repository: Repository? = null
+        return repository!!.getAllHotel()
     }
 
-    override fun create() {
+    override fun create(modelHotel: ModelHotel) {
 
     }
 
@@ -18,7 +20,7 @@ class HotelDAO : IDAO {
     }
 
     override fun deleteHotel(id: Int) {
-        Repository().getListHotel()[id].id = null
+        Repository().getAllHotel()
     }
 
 }

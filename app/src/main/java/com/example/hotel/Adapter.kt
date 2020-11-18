@@ -16,7 +16,7 @@ import com.example.hotel.databinding.ActivityHotelInfoBinding
 import com.squareup.picasso.Picasso
 
 
-class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Adapter.MyViewHolder>(){
+class Adapter(var hotelsList: List<ModelHotel>?) : RecyclerView.Adapter<Adapter.MyViewHolder>(){
     val context: Context = MainActivity()
 
     companion object {
@@ -66,7 +66,7 @@ class Adapter(var hotelsList: ArrayList<ModelHotel>?) : RecyclerView.Adapter<Ada
 //        }
     }
 
-    fun setHotel(hotel: ArrayList<ModelHotel>){
+    fun setHotel(hotel: List<ModelHotel>){
         this.hotelsList = hotel
         notifyDataSetChanged()
     }
