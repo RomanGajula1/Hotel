@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.room.Room
 import com.example.hotel.Adapter
+import com.example.hotel.Koin.MyApp
 import com.example.hotel.Repository
 import com.example.hotel.Room.DAO.HotelDAO
 import com.example.hotel.Room.DataBase
@@ -19,8 +20,9 @@ class HotelsListViewModel(application: Application) : AndroidViewModel(applicati
     private val repository: Repository by inject()
     var readAllData: LiveData<List<ModelHotel>>? = null
     var adapter: Adapter = Adapter(null)
+    lateinit var myApp: MyApp
     init {
-        readAllData = repository.getAllHotel()
+        readAllData = myApp.instasce.hotelDao?.allList()
     }
 
     fun getListHotel() : LiveData<List<ModelHotel>>? {

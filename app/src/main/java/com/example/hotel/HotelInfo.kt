@@ -13,19 +13,19 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 @Suppress("DEPRECATION")
 class HotelInfo : AppCompatActivity() {
 
-    val hotelInfoViewModel : HotelInfoViewModel by viewModel()
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val binding : ActivityHotelInfoBinding = DataBindingUtil.setContentView(this, R.layout.activity_hotel_info)
-
-        var id = intent.getIntExtra("id", 0)
-
-        hotelInfoViewModel.loadDetailsHotel(id)
-
-        binding.lifecycleOwner = this
-        binding.viewModel = hotelInfoViewModel
-    }
+//    val hotelInfoViewModel : HotelInfoViewModel by viewModel()
+//
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//        val binding : ActivityHotelInfoBinding = DataBindingUtil.setContentView(this, R.layout.activity_hotel_info)
+//
+//        var id = intent.getIntExtra("id", 0)
+//
+//        hotelInfoViewModel.loadDetailsHotel(id)
+//
+//        binding.lifecycleOwner = this
+//        binding.viewModel = hotelInfoViewModel
+//    }
 }
